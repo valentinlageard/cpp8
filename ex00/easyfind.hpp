@@ -5,7 +5,7 @@
 # include <stdexcept>
 
 template <typename T>
-int & easyfind(T container, int n) {
+int const & easyfind(T container, int n) {
 	typename T::iterator it;
 
 	it = container.begin();
