@@ -6,9 +6,9 @@ MutantStack<T>::MutantStack():
 {}
 
 template <typename T>
-MutantStack<T>::MutantStack(MutantStack const & original) {
-	*this = original;
-}
+MutantStack<T>::MutantStack(MutantStack const & original):
+	std::stack<T>(original)
+{}
 
 template <typename T>
 MutantStack<T>::~MutantStack() {}
@@ -18,7 +18,7 @@ MutantStack<T> & MutantStack<T>::operator=(MutantStack const & rhs) {
 	if (this == &rhs) {
 		return *this;
 	}
-	*this = rhs;
+	std::stack<T>::operator=(rhs);
 	return *this;
 }
 
